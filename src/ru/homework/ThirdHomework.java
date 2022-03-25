@@ -15,7 +15,7 @@ public class ThirdHomework {
         }
 
         System.out.printf("Здравствуй %s! Сумма цифр в числе = %s",
-                name, numberToStringConverter(sumOfDigitsInNumber(number)));
+                name, convertNumberToString(getSumOfDigitsInNumber(number.length() - 1, number)));
     }
 
     static String[] getUserNameAndNumber() {
@@ -29,15 +29,12 @@ public class ThirdHomework {
         return (number.length() >= 2 && number.length() <= 5);
     }
 
-    static int sumOfDigitsInNumber(String number) {
-        int result = 0;
-        for (int id = 0; id < number.length(); id++) {
-            result += Integer.parseInt(String.valueOf(number.charAt(id)));
-        }
-        return result;
+    static int getSumOfDigitsInNumber(int id, String number) {
+        int currentDigit = Integer.parseInt(String.valueOf(number.charAt(id)));
+        return id == 0 ? currentDigit : currentDigit + getSumOfDigitsInNumber(id - 1, number);
     }
 
-    static String numberToStringConverter(int number) {
+    static String convertNumberToString(int number) {
         return switch (number) {
             case (0) -> "ноль";
             case (1) -> "один";
