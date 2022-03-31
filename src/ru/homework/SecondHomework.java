@@ -24,7 +24,7 @@ public class SecondHomework {
         for (int i : arr) if (i % 2 == 0) System.out.printf(" %d", i);
 
         System.out.print("\nSecond exercise:");
-        for (int i : arr) if (i >= 10) System.out.printf(" %d", i);
+        for (int i : arr) if (i >= 10 && i < 100) System.out.printf(" %d", i);
 
         System.out.print("\nThird exercise:");
         for (int i : arr) if (i > arrMaxInt) arrMaxInt = i;
